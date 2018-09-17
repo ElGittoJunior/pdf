@@ -13,7 +13,7 @@
 
 use SplFileInfo;
 use RuntimeException;
-use Gears\String as Str;
+use Gears\Str as Str;
 use Gears\Di\Container;
 use Gears\Pdf\TempFile;
 
@@ -85,7 +85,7 @@ class Pdf extends Container
 	/**
 	 * Performs some intial Setup.
 	 *
-	 * @param string $document This is either a filepath to a docx or html file.
+	 * @param Str $document This is either a filepath to a docx or html file.
 	 *                         Or it may be a HTML string. The HTML string must
 	 *                         contain a valid DOCTYPE.
 	 *
@@ -144,11 +144,11 @@ class Pdf extends Container
 	 * If all you want to do is convert a document into a pdf,
 	 * this is a shortcut method to do just that.
 	 *
-	 * @param string $document This is either a filepath to a docx or html file.
+	 * @param Str $document This is either a filepath to a docx or html file.
 	 *                         Or it may be a HTML string. The HTML string must
 	 *                         contain a valid DOCTYPE.
 	 *
-	 * @param string $pdf Optionally you may supply an output path of the pdf,
+	 * @param Str $pdf Optionally you may supply an output path of the pdf,
 	 *                    if not supplied we will create the PDF in the same
 	 *                    folder as the source document with the same filename.
 	 *                    If you supplied a HTML string as the document we will
@@ -174,7 +174,7 @@ class Pdf extends Container
 	 * We call the backend class to generate the PDF for us.
 	 * Then we attempt to save those bytes to a permanent location.
 	 *
-	 * @param string $path If not supplied we will create the PDF in the name
+	 * @param Str $path If not supplied we will create the PDF in the name
 	 *                     folder as the source document with the same filename.
 	 *
 	 * @return SplFileInfo
@@ -219,7 +219,7 @@ class Pdf extends Container
 	 * directly to the browser as a downloadable file. This method will generate
 	 * the PDF and send the appropriate headers for you.
 	 *
-	 * @param string $filename The name of the file that the browser will see.
+	 * @param Str $filename The name of the file that the browser will see.
 	 *
 	 * @param boolean $exit To ensure no extra content is added to the PDF we
 	 *                      will by default die after outputting it. If you want
@@ -267,7 +267,7 @@ class Pdf extends Container
 	 * The user can then perform further configuration and custmoistation to
 	 * the backend easily before calling one of the output methods above.
 	 *
-	 * @param string $name
+	 * @param Str $name
 	 * @param array $args
 	 * @return mixed
 	 */
@@ -298,7 +298,7 @@ class Pdf extends Container
 	 * The user can then perform further configuration and custmoistation to
 	 * the backend easily before calling one of the output methods above.
 	 *
-	 * @param string $name
+	 * @param Str $name
 	 * @param mixed $value
 	 * @return void
 	 */
